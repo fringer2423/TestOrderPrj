@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  test:
+    build: ./app
+    container_name: test_prj
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./app/:/usr/src/app/
+    ports:
+      - 8009:8000
+    env_file:
+      - ./app/.env.dev
+    depends_on:
+      - test-db
+  test-db:
+    image: postgres:14-alpine
+    container_name: test-db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test_dev
+
+volumes:
+  postgres_data:
