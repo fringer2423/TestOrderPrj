@@ -47,7 +47,27 @@ SHEET_KEY=your_sheet_key
 Подробнее можно почитать [тут](https://developers.google.com/sheets/api/quickstart/quickstarts-overview)
 и [тут](https://developers.google.com/sheets/api/guides/concepts)
 
-### 5. Запустите контейнер
+
+### 5. Подготовьте frontend часть
+
+Перейдите в папку с проектом React
+
+```
+cd app/frontend
+```
+
+Установите все пакеты 
+
+```
+npm install
+```
+
+Соберите проект 
+```
+npm run build
+```
+
+### 6. Запустите контейнер
 
 * Проверьте, что получили и сохранили creds.json(Данные для доступа к API google)
 * Проверьте, что правильно создали .env.dev в папке app
@@ -70,4 +90,4 @@ docker-compose down -v
 
 Откройте проект локально по ссылке [http://127.0.0.1:8009/](http://127.0.0.1:8009/)
 
-### 6. Пользуйтесь =)
+### 7. Пользуйтесь =)
